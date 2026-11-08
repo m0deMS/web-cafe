@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Una experiencia inmersiva para descubrir el café de especialidad."
+    />
+    <meta name="theme-color" content="#fdfbf7" />
+    <title>Café Origen — El origen de algo bueno</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="page-grain" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Café Origen, inicio">
+        <span class="brand-mark" aria-hidden="true">CO.</span>
+        <span>Café <span class="brand-period">Origen</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#home">Inicio</a>
+        <a href="#carta" aria-controls="cartaPreview" aria-expanded="false" data-panel-target="carta">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5.5h16M4 12h16M4 18.5h16"/></svg>
+          Carta
+        </a>
+        <a href="#tienda" aria-controls="cartaPreview" aria-expanded="false" data-panel-target="cart">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>
+          Tienda
+        </a>
+        <a href="#contacto" aria-controls="cartaPreview" aria-expanded="false" data-panel-target="contact">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          Contacto
+        </a>
+      </nav>
+      <a class="header-cta" href="#contacto" aria-controls="cartaPreview" aria-expanded="false" data-open-reservation>
+        Reserva
+      </a>
+    </header>
+
+    <aside class="quick-menu collapsed" id="quickMenu" aria-label="Menú rápido">
+      <button class="quick-menu-toggle" id="quickMenuToggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+      <nav class="quick-menu-items" aria-label="Accesos rápidos">
+        <button class="quick-menu-item" type="button" aria-label="Ubicación" title="Ubicación" aria-controls="cartaPreview" aria-expanded="false" data-open-map>
+          <svg class="quick-menu-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span class="quick-menu-label">Ubicación</span>
+          <span class="quick-menu-tooltip">Ubicación</span>
+        </button>
+        <button class="quick-menu-item" type="button" aria-label="Contacto" title="Contacto" aria-controls="cartaPreview" aria-expanded="false" data-open-contact>
+          <svg class="quick-menu-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M7.2 3.5 10 7.8 8.3 10a15 15 0 0 0 5.7 5.7l2.2-1.7 4.3 2.8-.8 3.2a2 2 0 0 1-2.2 1.5A18 18 0 0 1 2.5 6.5 2 2 0 0 1 4 4.3l3.2-.8Z"/></svg>
+          <span class="quick-menu-label">Contacto</span>
+          <span class="quick-menu-tooltip">Contacto</span>
+        </button>
+        <button class="quick-menu-item" type="button" aria-label="Horario" title="Horario" aria-controls="cartaPreview" aria-expanded="false" data-open-hours>
+          <svg class="quick-menu-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <span class="quick-menu-label">Horario</span>
+          <span class="quick-menu-tooltip">Horario</span>
+        </button>
+        <button class="quick-menu-item" type="button" aria-label="Carta" title="Carta" aria-controls="cartaPreview" aria-expanded="false" data-open-carta>
+          <svg class="quick-menu-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5.5h16M4 12h16M4 18.5h16"/></svg>
+          <span class="quick-menu-label">Carta</span>
+          <span class="quick-menu-tooltip">Carta</span>
+        </button>
+        <button class="quick-menu-item" type="button" aria-label="Carrito" title="Carrito" aria-controls="cartaPreview" aria-expanded="false" data-open-cart>
+          <svg class="quick-menu-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="10" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg>
+          <span class="quick-menu-label">Carrito</span>
+          <span class="quick-menu-tooltip">Carrito</span>
+        </button>
+        <button class="quick-menu-item" type="button" aria-label="Usuario" title="Usuario" aria-controls="cartaPreview" aria-expanded="false" data-open-user>
+          <svg class="quick-menu-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+          <span class="quick-menu-label">Usuario</span>
+          <span class="quick-menu-tooltip">Usuario</span>
+        </button>
+      </nav>
+    </aside>
+
+    <aside class="carta-preview" id="cartaPreview" data-panel="carta" role="dialog" aria-modal="false" aria-label="Carta del café" aria-hidden="true">
+      <div class="carta-preview-header">
+        <svg class="hours-heading-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <svg class="cart-heading-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="10" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg>
+        <svg class="map-heading-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <svg class="menu-heading-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5.5h16M4 12h16M4 18.5h16"/></svg>
+        <svg class="reservation-heading-icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h2M14 14h2M8 17h2"/></svg>
+        <svg class="user-heading-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+        <svg class="contact-heading-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M7.2 3.5 10 7.8 8.3 10a15 15 0 0 0 5.7 5.7l2.2-1.7 4.3 2.8-.8 3.2a2 2 0 0 1-2.2 1.5A18 18 0 0 1 2.5 6.5 2 2 0 0 1 4 4.3l3.2-.8Z"/></svg>
+        <h2>Carta</h2>
+        <button class="carta-preview-close" type="button" aria-label="Cerrar panel">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+      <img src="carta.jpeg" alt="Carta de Café Origen con las variedades de café y sus precios" />
+      <div class="map-frame">
+        <iframe
+          title="Ubicación de Café Origen en Google Maps"
+          src="https://www.google.com/maps/d/embed?mid=1fT2ODbFPAv2Evv59YJf0OHEip4hbaEM1&amp;ehbc=2E312F"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+        <span class="map-brand-overlay" aria-hidden="true">Café Origen</span>
+      </div>
+      <form class="user-form" data-mode="login" novalidate>
+        <svg class="user-form-avatar" aria-hidden="true" viewBox="0 0 80 80">
+          <circle cx="40" cy="24" r="16" />
+          <path d="M10 72c2-17 13-27 30-27s28 10 30 27H10Z" />
+        </svg>
+        <p class="user-form-intro">Accede a tu cuenta de Café Origen</p>
+        <label class="user-form-field" data-register-only hidden>
+          <span class="sr-only">Nombre completo</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+          <input name="fullName" type="text" autocomplete="name" placeholder="Nombre completo" />
+        </label>
+        <label class="user-form-field" data-register-only hidden>
+          <span class="sr-only">Correo electrónico</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          <input name="email" type="email" autocomplete="email" placeholder="Correo electrónico" />
+        </label>
+        <label class="user-form-field">
+          <span class="sr-only">Nombre de usuario</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+          <input name="username" type="text" autocomplete="username" placeholder="Nombre de usuario" required />
+        </label>
+        <label class="user-form-field">
+          <span class="sr-only">Contraseña</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 1 1 8 0v3M12 14v3"/></svg>
+          <input name="password" type="password" autocomplete="current-password" placeholder="Contraseña" required />
+        </label>
+        <label class="user-form-field" data-register-only hidden>
+          <span class="sr-only">Repite la contraseña</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 1 1 8 0v3M12 14v3"/></svg>
+          <input name="confirmPassword" type="password" autocomplete="new-password" placeholder="Repite la contraseña" />
+        </label>
+        <div class="user-form-options" data-login-only>
+          <label class="user-form-remember"><input name="remember" type="checkbox" /> <span>Recordarme</span></label>
+          <button class="user-form-forgot" type="button" data-forgot-password>¿Olvidaste tu contraseña?</button>
+        </div>
+        <button class="user-form-submit" type="submit">Iniciar sesión</button>
+        <p class="user-form-switch">
+          <span data-auth-prompt>¿No tienes cuenta?</span>
+          <button class="user-form-forgot" type="button" data-toggle-auth>Crear cuenta</button>
+        </p>
+        <p class="user-form-message" role="status" aria-live="polite"></p>
+      </form>
+      <section class="contact-panel" aria-label="Datos y formulario de contacto">
+        <div class="contact-details">
+          <a class="contact-detail" href="tel:+34693456758">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7.2 3.5 10 7.8 8.3 10a15 15 0 0 0 5.7 5.7l2.2-1.7 4.3 2.8-.8 3.2a2 2 0 0 1-2.2 1.5A18 18 0 0 1 2.5 6.5 2 2 0 0 1 4 4.3l3.2-.8Z"/></svg>
+            <span><strong>Móvil</strong><span>+34 693 456 758</span></span>
+          </a>
+          <a class="contact-detail" href="tel:+34987564789">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7.2 3.5 10 7.8 8.3 10a15 15 0 0 0 5.7 5.7l2.2-1.7 4.3 2.8-.8 3.2a2 2 0 0 1-2.2 1.5A18 18 0 0 1 2.5 6.5 2 2 0 0 1 4 4.3l3.2-.8Z"/></svg>
+            <span><strong>Fijo</strong><span>+34 987 564 789</span></span>
+          </a>
+          <a class="contact-detail" href="https://wa.me/34693456758" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.5L3 20l1-4.7a8.5 8.5 0 1 1 16.5-3.7Z"/><path d="M8.2 8.3c.4 2.5 2.2 4.4 4.8 5.2l1.2-1.1 2 .9c-.2 1.3-1.2 2-2.5 1.8-3.5-.5-6.3-3.2-6.7-6.4-.2-1.2.6-2.2 1.7-2.4l1 2Z"/></svg>
+            <span><strong>WhatsApp</strong><span>+34 693 456 758</span></span>
+          </a>
+          <a class="contact-detail" href="mailto:cafeorigen@gmail.com">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <span><strong>Correo electrónico</strong><span>cafeorigen@gmail.com</span></span>
+          </a>
+        </div>
+        <form class="contact-form">
+          <h3>Envíanos un mensaje</h3>
+          <label class="contact-field">
+            <span class="sr-only">Tu nombre</span>
+            <input name="name" type="text" autocomplete="name" placeholder="Tu nombre" required />
+          </label>
+          <label class="contact-field">
+            <span class="sr-only">Tu correo electrónico</span>
+            <input name="email" type="email" autocomplete="email" placeholder="Tu correo electrónico" required />
+          </label>
+          <label class="contact-field contact-field-message">
+            <span class="sr-only">Tu mensaje</span>
+            <textarea name="message" rows="3" placeholder="¿En qué podemos ayudarte?" required></textarea>
+          </label>
+          <button class="user-form-submit" type="submit">Envía</button>
+          <p class="contact-form-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+      <section class="hours-panel" aria-label="Horario de apertura">
+        <div class="hours-row">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <span>Lunes a domingo</span>
+          <strong>07:00–22:00</strong>
+        </div>
+      </section>
+      <section class="cart-panel" aria-label="Carrito de compra">
+        <svg class="cart-empty-icon" aria-hidden="true" viewBox="0 0 48 48">
+          <path d="M6 9h5l5 22h19l5-16H13" />
+          <circle cx="19" cy="38" r="2.5" />
+          <circle cx="34" cy="38" r="2.5" />
+        </svg>
+        <h3>Tu carrito está vacío</h3>
+        <p>Cuando encuentres algo que te guste, podrás verlo aquí.</p>
+        <button class="user-form-submit" type="button" data-cart-view-menu>Ver la carta</button>
+      </section>
+      <section class="reservation-panel" aria-label="Plano 3D de mesas">
+        <div class="reservation-visual">
+          <img src="plan 3d.jpeg" alt="Plano 3D de las mesas del café" />
+          <div class="reservation-details">
+            <p class="reservation-note">Cada mesa dispone de enchufes con conexión a tierra y wifi!</p>
+            <a class="primary-button reservation-phone-button" href="tel:+34693456758">
+              <span>Reserva:</span>
+              <span>+34 693 456 758</span>
+            </a>
+          </div>
+        </div>
+        <button class="action-button action-button-secondary reservation-view-button" type="button" data-show-live-map>
+          Mapa en vivo de mesas libres
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </section>
+      <section class="reservation-live-panel" aria-label="Mapa en vivo de mesas disponibles">
+        <div class="reservation-visual">
+          <img src="mesas disponibles.png" alt="Mapa en vivo de las mesas disponibles" />
+          <div class="reservation-details">
+            <p class="reservation-note">Cada mesa dispone de enchufes con conexión a tierra y wifi!</p>
+            <a class="primary-button reservation-phone-button" href="tel:+34693456758">
+              <span>Reserva:</span>
+              <span>+34 693 456 758</span>
+            </a>
+          </div>
+        </div>
+        <button class="action-button action-button-secondary reservation-view-button" type="button" data-show-reservation-plan>
+          Volver al plano 3D
+        </button>
+      </section>
+    </aside>
+
+    <main>
+      <section class="story-section hero-section" id="home" data-scene="0">
+        <video class="section-video section-video-full" muted loop playsinline preload="metadata" aria-hidden="true">
+          <source src="1.mp4" type="video/mp4" />
+        </video>
+        <div class="section-copy hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> Café de origen, hecho con calma</p>
+          <h1>El origen<br /><em>de algo bueno.</em></h1>
+          <p class="section-description">
+            Los buenos momentos empiezan con paciencia, café recién hecho y
+            el cuidado de quienes conocen cada grano.
+          </p>
+          <a class="action-button action-button-secondary" href="#carta" aria-controls="cartaPreview" aria-expanded="false" data-open-menu-preview>
+            Ver la carta
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="hero-caption">
+          <span class="caption-line"></span>
+          <span>De origen, siempre.</span>
+        </div>
+        <div class="vertical-note">BAJA EL RITMO <span>↓</span></div>
+      </section>
+
+      <section class="story-section origin-section" id="carta" data-scene="1">
+        <video class="section-video section-video-right" muted loop playsinline preload="metadata" aria-hidden="true">
+          <source src="2.mp4" type="video/mp4" />
+        </video>
+        <div class="section-copy origin-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> Un café para quedarse</p>
+          <h2>Un café<br /><em>para quedarse.</em></h2>
+          <p class="section-description">
+            Trabajamos directamente con productores locales para traer a tu
+            taza un café sostenible y con un perfil de sabor inigualable.
+          </p>
+          <div class="note-card">
+            <span class="note-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M14 14.76V5a2 2 0 0 0-4 0v9.76a4 4 0 1 0 4 0Z"/><path d="M12 11v5"/></svg>
+            </span>
+            <span>90°–96° C</span>
+            <span class="note-divider"></span>
+            <span>Preparado con paciencia</span>
+          </div>
+        </div>
+        <div class="floating-label floating-label-top">
+          <span class="label-number">01</span>
+          <span>TIERRA<br />Y ORIGEN</span>
+        </div>
+        <div class="floating-label floating-label-bottom">
+          <span class="label-dot"></span>
+          <span>Deja que el aroma<br />llegue a ti.</span>
+        </div>
+      </section>
+
+      <section class="story-section swirl-section" id="tienda" data-scene="2">
+        <video class="section-video section-video-full" muted loop playsinline preload="metadata" aria-hidden="true">
+          <source src="3.mp4" type="video/mp4" />
+        </video>
+        <div class="section-copy swirl-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> Notas para descubrir</p>
+          <h2>Un sabor<br /><em>inesperado.</em></h2>
+          <p class="section-description">
+            Un giro luminoso: higo maduro, cacao suave y ese final que invita
+            a quedarse un rato más.
+          </p>
+          <a class="text-link" href="#contacto">
+            Encuentra tu próximo café favorito <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <div class="flavour-stack" aria-label="Notas de sabor">
+          <span>HIGO</span>
+          <span class="flavour-separator">·</span>
+          <span>CACAO</span>
+          <span class="flavour-separator">·</span>
+          <span>MIEL</span>
+        </div>
+        <div class="swirl-coordinate">3° 24' 12.0&quot; N<br />73° 12' 45.0&quot; W</div>
+      </section>
+
+      <section class="story-section finale-section" id="contacto" data-scene="3">
+        <video class="section-video section-video-right" muted loop playsinline preload="metadata" aria-hidden="true">
+          <source src="4.mp4" type="video/mp4" />
+        </video>
+        <div class="section-copy finale-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> Tu momento, a tu manera</p>
+          <h2>Haz tiempo<br /><em>para disfrutar.</em></h2>
+          <p class="section-description">
+            Un comienzo más tranquilo y una pausa para disfrutar de un café
+            que se siente tuyo.
+          </p>
+          <button class="primary-button" type="button" aria-controls="cartaPreview" aria-expanded="false" data-open-reservation>
+            Reserva mesa
+          </button>
+        </div>
+        <div class="floating-actions" aria-label="Nuestra filosofía">
+          <button class="float-button float-button-origin" type="button" data-toast="Cultivado con calma y seleccionado a mano.">
+            <span class="float-button-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3 5 8v12h14V8l-7-5Z"/><path d="M9 20v-6h6v6M9 9h.01M15 9h.01"/></svg>
+            </span>
+            <span>Origen<br />responsable</span>
+          </button>
+          <button class="float-button float-button-notes" type="button" data-toast="Cacao suave, higo maduro y un toque de miel.">
+            <span class="float-button-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 10h13v5a6.5 6.5 0 0 1-13 0v-5ZM17 11h2a2 2 0 0 1 0 4h-2M7 3v3M12 2v4M17 3v3"/></svg>
+            </span>
+            <span>Hecho para<br />disfrutar</span>
+          </button>
+          <button class="float-button float-button-time" type="button" data-toast="Tómate tu tiempo para disfrutar cada sorbo.">
+            <span class="float-button-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </span>
+            <span>Tómate<br />tu tiempo</span>
+          </button>
+        </div>
+        <div class="finale-footer">
+          <span class="finale-footer-copy">CAFÉ ORIGEN — CAFÉ DE ESPECIALIDAD</span>
+          <a class="footer-brand" href="#home" aria-label="Café Origen, inicio">
+            <span class="footer-brand-mark" aria-hidden="true">CO.</span>
+            <span>Café <span class="footer-brand-period">Origen</span></span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
